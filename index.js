@@ -64,6 +64,7 @@ function getMovieList(){
 
 function getWatchlist(imdbID){
      if(JSON.parse(localStorage.getItem("myWatchlist"))){
+      myWatchlist = []
       myWatchlist.push(...JSON.parse(localStorage.getItem("myWatchlist")))
    }
    myWatchlist.push(imdbID);
