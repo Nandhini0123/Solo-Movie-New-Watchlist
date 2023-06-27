@@ -1,12 +1,8 @@
 const searchBtn = document.getElementById("search-btn");
 const searchTab = document.getElementById("search-tab");
 const formId = document.getElementById("form-id");
-// let  movieName = '';
 let movieId = [];
-// let urlid = '';
 let myWatchlist = [];
-let movieList = [];
-// let storedData = JSON.parse(localStorage.getItem("myWatchlist"))
 
 
 searchBtn.addEventListener("click", function(event){
@@ -62,16 +58,15 @@ function getMovieList(){
       }
 
       else {
-         document.getElementById("movie-list").innerHTML = " There are no movies available for the search. Please recheck the search value and try again"
+         document.getElementById("movie-list").innerHTML = `<p class="alert-msg">Sorry! We couldn't find any movies </p>`
       }
-       
-       
+   
     })
 }
 
 function getWatchlist(imdbID){
    if((JSON.parse(localStorage.getItem("myWatchlist").includes(imdbID)))){
-        document.getElementById("movie-list").innerHTML = " This movie already exsists in Watchlist";
+        document.getElementById("movie-list").innerHTML = `<p class="alert-msg">Already exists in Watchlist!</p>` 
        }
        else {
          if(JSON.parse(localStorage.getItem("myWatchlist"))){
@@ -83,7 +78,3 @@ function getWatchlist(imdbID){
          localStorage.setItem("myWatchlist",JSON.stringify(myWatchlist))
        }
 }
-
-// if((JSON.parse(localStorage.getItem("myWatchlist").includes(imdbID)))){
-//    document.getElementById("movie-list").innerHTML = " This movie already exsists in Watchlist";
-// }
