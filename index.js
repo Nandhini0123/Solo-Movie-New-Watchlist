@@ -65,7 +65,7 @@ function getMovieList(){
 }
 
 function getWatchlist(imdbID){
-   if((JSON.parse(localStorage.getItem("myWatchlist").includes(imdbID)))){
+   if((JSON.parse(localStorage.getItem("myWatchlist")).includes(imdbID))){
         document.getElementById("movie-list").innerHTML = `<p class="alert-msg">Already exists in Watchlist!</p>` 
        }
        else {
