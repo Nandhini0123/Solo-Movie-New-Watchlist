@@ -13,7 +13,7 @@ function displayWatchlist(){
     fetch(`https://www.omdbapi.com/?i=${storedData[i]}&apikey=ed3e63ef`)
       .then ( response => response.json())
       .then ( data => {
-          //console.log("watchlist", data)
+          console.log("watchlist", data)
           document.getElementById("watchlist-movies").innerHTML += `
            <div class="movie-details">
                <img src=${data.Poster} class="poster"/>
@@ -43,7 +43,7 @@ function displayWatchlist(){
 
 // TO REMOVE MOVIES FROM WATCHLIST
 function removeMovie(imdbID){
-  //console.log(storedData)
+  console.log("storedData", storedData)
   let moviesInLocal = []; 
   let indexToRemove = storedData.indexOf(imdbID);
   storedData.splice(indexToRemove, 1)
